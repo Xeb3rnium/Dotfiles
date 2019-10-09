@@ -1,0 +1,31 @@
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+
+
+  ethernets:
+     wifi0:
+      dhcp4: true
+      match:
+        macaddress: 00:20:91:69:69:01
+      set-name: wifi0
+
+
+     host0:
+      dhcp4: true
+      match:
+        macaddress: 00:20:91:69:69:02
+      set-name: host0
+
+
+     eth0:
+      dhcp4: true
+#      addresses:
+#        - 10.10.10.2/24
+#      gateway4: 10.10.10.1
+#      nameservers:
+#        addresses: [1.1.1.1, 1.0.0.1]
+      match:
+        macaddress: 00:20:91:69:69:03
+      set-name: eth0
