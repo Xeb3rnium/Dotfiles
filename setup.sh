@@ -9,7 +9,6 @@
 #
 
 
-#Kali
 if [[ -n $(hostnamectl | grep "Operating System: Kali") ]];
 then
    sudo cp .bash_aliases ~/
@@ -18,10 +17,7 @@ then
    sudo cp *.link /etc/systemd/network/
    sudo update-initramfs -u
    sudo apt install realtek-rtl88xxau-dkms
-fi
 
-
-#Ubuntu
 elif [[ -n $(hostnamectl | grep "Operating System: Ubuntu") ]];
 then
    sudo cp .bash_aliases ~/
@@ -30,8 +26,6 @@ then
    sudo cp 01-network-manager-all.yaml /etc/netplan/
    sudo netplan apply
    #sudo apt install rtl88au-dkms
-fi
-
 
 else
    echo "Unknown operating system";
