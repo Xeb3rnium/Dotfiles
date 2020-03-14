@@ -12,7 +12,8 @@ alias profile='edit ~/.bash_profile'
 alias hosts='cat ~/.ssh/config'
 alias off='sudo shutdown -P now'
 alias jg='for x in *.jpg; do mv "$x" "${x%.jpg}.jpeg"; done'
-alias inc='i=1; for x in *.jpeg; do mv "$x" photo"$i".jpeg; let i=i+1; done'
+alias mp='for x in *.mp3; do mv "$x" "$(echo -n $x | cut -d "-" -f 1,2).mp3"; done'
+alias inc='i=0; for x in *.jpeg; do mv "$x" photo"$i".jpeg; let i=i+1; done'
 
 
 alias backup='adb backup -apk -shared -all -f'
